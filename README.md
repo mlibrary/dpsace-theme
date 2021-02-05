@@ -1,6 +1,6 @@
 # DSpace Theme
 
-This repo contains the styles and template changes to the Mirage2 theme to applied to our DSpace 6.x instance ("Deep Blue").
+This repo contains the styles and template changes to the Mirage2 theme to be applied to our DSpace 6.x instance ("Deep Blue").
 
 To learn more about [Mirage 2 configuration and customization](https://wiki.lyrasis.org/display/DSDOC6x/Mirage+2+Configuration+and+Customization), see that documentation.
 
