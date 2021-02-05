@@ -1,0 +1,207 @@
+/*
+ *  DESIGN SYSTEM STYLES
+ *  Docs: https://design-system.lib.umich.edu/
+**/
+
+/*
+ * DOCUMENT GLOBALS
+**/
+
+html,
+body {
+  color: var(--color-neutral-400);
+  font-family: var(--font-base-family);
+  font-size: 16px;
+}
+
+.main-container {
+  width: 1220px;
+}
+
+/*
+ * HEADINGS
+**/
+
+h1 {
+  font-family: var(--font-second-family);
+  font-size: var(--text-xxx-large);
+  line-height: var(--line-height-page-heading);
+  margin-bottom: var(--space-x-large);
+}
+
+h2 {
+  font-size: var(--text-large);
+  font-weight: var(--bold);
+  margin-bottom: var(--space-medium);
+}
+
+/*
+ * LINKS
+**/
+
+a,
+a:hover {
+  color: var(--color-teal-400);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  text-decoration-thickness: 2px;
+}
+
+/*
+ * BUTTONS
+**/
+
+button,
+button:active,
+button:hover,
+button:focus,
+button.active,
+.btn-primary:focus,
+.btn-primary:active,
+.button-light,
+.btn-default,
+.btn {
+  outline: none !important;
+  border: none;
+  font-size: 1rem;
+  font-family: var(--font-base-family);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: var(--space-small) var(--space-medium);
+  background-color: var(--color-teal-400);
+  cursor: pointer;
+  text-decoration: none;
+  min-width: var(--space-xxx-large);
+  min-height: var(--space-xxx-large);
+  font-weight: var(--bold);
+}
+
+button:focus,
+button:active,
+button:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px var(--color-neutral-400);
+  border-radius: 4px !important;
+  background: var(--color-teal-400);
+}
+
+button svg {
+  flex-shrink: 0; /* prevent icons in buttons from shrinking. */
+}
+
+.button--light,
+.btn-default {
+  background: var(--color-blue-100);
+  color: var(--color-teal-400);
+}
+
+.btn-default:hover,
+.btn-default:active,
+.btn-default:focus {
+  background: var(--color-blue-100);
+  color: var(--color-teal-400);
+}
+
+/*
+ * INPUTS
+**/
+input[type="text"],
+select,
+.form-control {
+  padding: var(--space-small) var(--space-medium);
+  min-height: var(--space-xxx-large);
+  font-size: 16px;
+  color: var(--color-neutral-400);
+}
+
+/*
+ * BREADCRUMB
+**/
+
+.trail-wrapper {
+  background: none;
+  border: none;
+  padding: var(--space-medium) 0;
+  border-top: solid 2px var(--color-neutral-100);
+}
+
+.trail-wrapper .glyphicon {
+  display: none;
+}
+
+.breadcrumb {
+  padding: 0;
+}
+
+/*
+ * WEBSITE HEADER CLEANUP
+**/
+
+.navbar-nav > li > a {
+  padding: var(--space-x-small) var(--space-small);
+}
+
+.navbar-nav > li > a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/*
+ * FILTERS
+**/
+
+#ds-options {
+  padding-top: 0;
+}
+
+#ds-options .ds-option-set-head {
+  color: var(--color-neutral-300);
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-weight: var(--bold);
+  font-size: 0.875rem;
+  padding: var(--space-small) 0;
+  margin: 0;
+}
+
+#ds-options a {
+  background: white !important;
+  border-color: var(--color-neutral-100);
+}
+
+a.list-group-item {
+  color: var(--color-neutral-400);
+  text-decoration: none;
+  padding: var(--space-small) var(--space-medium);
+}
+
+a.list-group-item:hover {
+  color: var(--color-neutral-400);
+  text-decoration: underline;
+  background: transparent;
+}
+
+.list-group .list-group-item.active:hover {
+  text-decoration: none;
+}
+
+.list-group-item-heading {
+  font-size: 1rem !important;
+  font-weight: var(--bold);
+  color: var(--color-neutral-400) !important;
+}
+
+/*
+ * SIDE BAR
+**/
+
+#main-container #sidebar {
+  padding-top: var(--space-medium);
+  background: var(--color-blue-100);
+}
