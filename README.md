@@ -10,7 +10,7 @@ This is all manual as of February 2021. Contact [Jose Blanco](https://www.lib.um
 
 ## Styles
 
-`styles/_styles.scss` is added last in the theme build step, so you can assume this is the last file at the end of the stylesheet cascade.
+`styles/_style.scss` is added last in the theme build step, so you can assume this is the last file at the end of the stylesheet cascade.
 
 ## XSL templates
 
