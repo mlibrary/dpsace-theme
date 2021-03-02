@@ -21,3 +21,8 @@ TODO:
 - [ ] Add a `built` or `source` kind of directory here so what can be overriden can be examined.
 - [ ] Upgrade development env to be modern and follow industry development practices. local development, git, automated deployment environments, documentation, ...
 ```
+
+## Preview
+
+![umich-lib-dspace-theme-preview](https://user-images.githubusercontent.com/1678665/109688687-8e4edd80-7b52-11eb-917c-4977f797c991.png)
+
