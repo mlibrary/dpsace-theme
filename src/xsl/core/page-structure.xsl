@@ -786,7 +786,7 @@
           </div>
           <div class="page-footer__disclaimer">
             <div class="viewport-container">
-              <p>© 2021, Regents of the University of Michigan. Built with <a href="http://www.dspace.org/">DSpace</a> and the the <a href="https://design-system.lib.umich.edu/">U-M Library Design System</a>.</p>
+              <p>© 2021, Regents of the University of Michigan. Built with <a href="http://www.dspace.org/">DSpace</a>.</p>
             </div>
           </div>
         </footer>
