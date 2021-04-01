@@ -3,6 +3,16 @@
  *  Docs: https://design-system.lib.umich.edu/
 **/
 
+:root {
+  --viewport-margin: var(--space-medium);
+}
+
+@media (min-width: 720px) {
+  :root {
+    --viewport-margin: var(--space-xx-large);
+  }
+}
+
 /*
  * DOCUMENT GLOBALS
 **/
