@@ -734,6 +734,9 @@
                     913 S. University Avenue<br/>Ann Arbor, MI 48109
                   </li>
                   <li>
+                    <a href="https://publishing.umich.edu/">Michigan Publishing</a>
+                  </li>
+                  <li>
                     <a href="https://www.lib.umich.edu/about-us/about-library/diversity-equity-inclusion-and-accessibility/accessibility">Accessibility</a>
                   </li>
 
