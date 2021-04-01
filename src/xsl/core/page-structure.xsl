@@ -87,7 +87,6 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:call-template name="buildHeader"/>
-                            <xsl:call-template name="buildTrail"/>
                             <!--javascript-disabled warning, will be invisible if javascript is enabled-->
                             <div id="no-js-warning-wrapper" class="hidden">
                                 <div id="no-js-warning">
@@ -105,11 +104,9 @@
                                             <xsl:apply-templates select="dri:options"/>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-9 main-content">
+                            <xsl:call-template name="buildTrail"/>
                                             <xsl:apply-templates select="*[not(self::dri:options)]"/>
 
-                                            <div class="visible-xs visible-sm">
-                                                <xsl:call-template name="buildFooter"/>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -117,10 +114,11 @@
                                 <!--
                             The footer div, dropping whatever extra information is needed on the page. It will
                             most likely be something similar in structure to the currently given example. -->
+                         </div>
+
                             <div class="hidden-xs hidden-sm">
                             <xsl:call-template name="buildFooter"/>
                              </div>
-                         </div>
 
 
                         </xsl:otherwise>
@@ -204,7 +202,8 @@
                 </link>
             </xsl:for-each>
 
-            <link rel="stylesheet" href="{concat($theme-path, 'styles/main.css')}"/>
+	    <link rel="stylesheet" href="{concat($theme-path, 'styles/main.css')}"/>
+	    <link rel="stylesheet" href="{concat($theme-path, 'styles/deepblue.css')}"/>
 
 
     <!-- Add syndication feeds -->
@@ -357,8 +356,8 @@
 
         <!-- Docs: https://design-system.lib.umich.edu/components/universal-header/ -->
         <m-universal-header></m-universal-header>
-
-        <m-website-header name="Deep Blue Docs">
+      
+	<m-website-header  name="Deep Blue Documents" to="/documents">
             <div role="navigation">
                 <div>
                     <div class="navbar-header">
@@ -577,7 +576,7 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">active</xsl:attribute>
-                    <xsl:apply-templates />
+		    <h1 style="display: inline; font-size: 16px; font-weight: bold;"><xsl:apply-templates /></h1>
                 </xsl:otherwise>
             </xsl:choose>
         </li>
@@ -722,57 +721,72 @@
 
     <!-- Like the header, the footer contains various miscellaneous text, links, and image placeholders -->
     <xsl:template name="buildFooter">
-        <footer>
-                <div class="row">
-                    <hr/>
-                    <div class="col-xs-7 col-sm-8">
-                        <div>
-                            <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2016&#160; <a href="http://www.duraspace.org/" target="_blank">DuraSpace</a>
-                        </div>
-                        <div class="hidden-print">
-                            <a>
-                                <xsl:attribute name="href">
-                                    <xsl:value-of
-                                            select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                                    <xsl:text>/contact</xsl:text>
-                                </xsl:attribute>
-                                <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
-                            </a>
-                            <xsl:text> | </xsl:text>
-                            <a>
-                                <xsl:attribute name="href">
-                                    <xsl:value-of
-                                            select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                                    <xsl:text>/feedback</xsl:text>
-                                </xsl:attribute>
-                                <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-5 col-sm-4 hidden-print">
-                        <div class="pull-right">
-                            <span class="theme-by">Theme by&#160;</span>
-                            <br/>
-                            <a title="Atmire NV" target="_blank" href="http://atmire.com">
-                                <img alt="Atmire NV" src="{concat($theme-path, 'images/atmire-logo-small.svg')}"/>
-                            </a>
-                        </div>
+        <footer class="page-footer">
+          <div class="viewport-container">
+            <div class="page-footer__content">
+              <section>
+                <h2>University of Michigan Library</h2>
+                <ul>
+                  <li>
+                    913 S. University Avenue<br/>Ann Arbor, MI 48109
+                  </li>
+                  <li>
+                    <a href="https://www.lib.umich.edu/about-us/about-library/diversity-equity-inclusion-and-accessibility/accessibility">Accessibility</a>
+                  </li>
+                </ul>
+              </section>
 
-                    </div>
-                </div>
-                <!--Invisible link to HTML sitemap (for search engines) -->
-                <a class="hidden">
-                    <xsl:attribute name="href">
-                        <xsl:value-of
-                                select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                        <xsl:text>/htmlmap</xsl:text>
-                    </xsl:attribute>
-                    <xsl:text>&#160;</xsl:text>
-                </a>
-            <p>&#160;</p>
+              <section>
+                <h2>About Deep Blue</h2>
+                <ul>
+                  <li>
+                    <a href="https://www.lib.umich.edu/collections/deep-blue-repositories">Deep Blue Repositories</a>
+                  </li>
+                  <li>
+                    <a href="https://www.lib.umich.edu/research-and-scholarship/help-research/share-and-preserve-your-work">Share and Preserve Your Work</a>
+                  </li>
+                  <li>
+                    <a href="https://www.lib.umich.edu/research-and-scholarship/data-services/share-and-preserve-your-data">Share and Preserve your Data</a>
+                  </li>
+                    <li>
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of
+                                        select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                <xsl:text>/contact</xsl:text>
+                            </xsl:attribute>
+                            <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of
+                                    select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                <xsl:text>/feedback</xsl:text>
+                            </xsl:attribute>
+                            <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
+                        </a>
+                    </li>
+                </ul>
+              </section>
+
+              <section>
+                <h2>Privacy and copyright</h2>
+
+                <p><a href="https://lib.umich.edu/about-us/policies/library-privacy-statement">Library Privacy Statement</a></p>
+
+                <p>Except where otherwise noted, this work is subject to a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 license</a>. For details and exceptions, see the <a href="/about-us/policies/copyright-policy">Library Copyright Policy</a>.</p>
+              </section>
+            </div>
+          </div>
+          <div class="page-footer__disclaimer">
+            <div class="viewport-container">
+              <p>© 2021, Regents of the University of Michigan. Built with <a href="http://www.dspace.org/">DSpace</a>.</p>
+            </div>
+          </div>
         </footer>
     </xsl:template>
-
 
     <!--
             The meta, body, options elements; the three top-level elements in the schema
