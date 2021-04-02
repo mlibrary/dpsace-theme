@@ -730,8 +730,8 @@
               <section>
                 <h2>University of Michigan Library</h2>
                 <ul>
-                  <li>
-                    913 S. University Avenue<br/>Ann Arbor, MI 48109
+                    <li>
+                        <a href="https://www.lib.umich.edu/">U-M Library</a>
                   </li>
                   <li>
                     <a href="https://publishing.umich.edu/">Michigan Publishing</a>
@@ -746,24 +746,18 @@
               <section>
                 <h2>About Deep Blue</h2>
                 <ul>
-                  <li>
-                    <a href="https://www.lib.umich.edu/collections/deep-blue-repositories">Deep Blue Repositories</a>
-                  </li>
-                  <li>
-                    <a href="https://www.lib.umich.edu/research-and-scholarship/help-research/share-and-preserve-your-work">Share and Preserve Your Work</a>
-                  </li>
-                  <li>
-                    <a href="https://www.lib.umich.edu/research-and-scholarship/data-services/share-and-preserve-your-data">Share and Preserve your Data</a>
-                  </li>
                     <li>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of
-                                        select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                                <xsl:text>/contact</xsl:text>
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
-                        </a>
+                        <a href="https://www.lib.umich.edu/collections/deep-blue-repositories">Deep Blue Repositories</a>
+                    </li>
+                    <li>
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of
+                                select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                            <xsl:text>/contact</xsl:text>
+                        </xsl:attribute>
+                        <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
+                    </a>
                     </li>
                     <li>
                         <a>
@@ -775,6 +769,9 @@
                             <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
                         </a>
                     </li>
+                    <li>
+                        <a href="/static/about/deepbluefaq.html">Frequently Asked Questions</a>
+                    </li>
                 </ul>
               </section>
 
@@ -783,13 +780,13 @@
 
                 <p><a href="https://lib.umich.edu/about-us/policies/library-privacy-statement">Library Privacy Statement</a></p>
 
-                <p>Except where otherwise noted, this work is subject to a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 license</a>. For details and exceptions, see the <a href="/about-us/policies/copyright-policy">Library Copyright Policy</a>.</p>
+                <p>Works found in Deep Blue Documents are protected by copyright unless otherwise indicated.</p>
               </section>
             </div>
           </div>
           <div class="page-footer__disclaimer">
             <div class="viewport-container">
-              <p>© 2021, Regents of the University of Michigan. Built with <a href="http://www.dspace.org/">DSpace</a>.</p>
+              <p>© 2021, Regents of the University of Michigan. Built with <a href="http://www.dspace.org/">DSpace</a></p>
             </div>
           </div>
         </footer>

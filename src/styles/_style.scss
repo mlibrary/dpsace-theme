@@ -238,23 +238,29 @@ a.list-group-item:hover {
 footer.page-footer {
   background: var(--color-blue-400);
 
-  & ul {
+  & > ul {
     list-style: none;
     margin: 0;
     padding: 0;
 
-    & a {
-      display: inline-block;
+    & li > a {
+      display: block;
       padding: var(--space-x-small) 0;
+      color: white;
+      text-decoration: none;
 
       &:hover {
-        text-decoration-thickness: 2px;
+        text-decoration: underline;
       }
     }
   }
 
-  & a {
-    color: white;
+  & p a {
+    text-decoration: underline;
+
+    & :hover {
+      text-decoration-thickness: 2px;
+    }
   }
 }
 
@@ -271,20 +277,20 @@ footer.page-footer {
     margin-bottom: var(--space-medium);
   }
 
+  & > section {
+    margin-bottom: var(--space-x-large);
+  }
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+  grid-template-columns: 2fr 2fr 3fr;
   grid-auto-flow: column;
-  gap: var(--space-large);
+  gap: var(--space-xxx-large);
 }
 
 .page-footer__disclaimer {
   background: var(--color-blue-500);
   color: var(--color-blue-200);
   padding: var(--space-medium) 0;
-
-  & a {
-    color: var(--color-blue-200);
-  }
 
   & p {
     margin: 0;
