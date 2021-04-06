@@ -282,9 +282,8 @@ footer.page-footer {
   }
 
   display: grid;
-  grid-template-columns: 2fr 2fr 3fr;
-  grid-auto-flow: column;
-  gap: var(--space-xxx-large);
+  grid-template-columns: repeat(auto-fill, minmax(36ch, 1fr));
+  grid-gap: var(--space-xx-large);
 }
 
 .page-footer__disclaimer {
