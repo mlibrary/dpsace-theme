@@ -3,6 +3,16 @@
  *  Docs: https://design-system.lib.umich.edu/
 **/
 
+:root {
+  --viewport-margin: var(--space-medium);
+}
+
+@media (min-width: 720px) {
+  :root {
+    --viewport-margin: var(--space-xx-large);
+  }
+}
+
 /*
  * DOCUMENT GLOBALS
 **/
@@ -14,8 +24,22 @@ body {
   font-size: 16px;
 }
 
-.main-container {
-  width: 1220px;
+/*
+ * Viewport Container
+ *
+ * Handles the need for page content to be centered
+ * in the visible view port window and manage the
+ * ammount of margin between the site and the edge
+ * of the screen's viewport.
+ */
+
+.viewport-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--viewport-margin);
+  padding-right: var(--viewport-margin);
 }
 
 /*
@@ -204,4 +228,80 @@ a.list-group-item:hover {
 #main-container #sidebar {
   padding-top: var(--space-medium);
   background: var(--color-blue-100);
+}
+
+
+/*
+ * Page Footer
+**/
+
+footer.page-footer {
+  background: var(--color-blue-400);
+
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & li > a {
+      display: block;
+      padding: var(--space-x-small) 0;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & p a {
+    text-decoration: underline;
+
+    & :hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+.page-footer__content {
+  color: var(--color-blue-100);
+  padding: var(--space-xxx-large) 0;
+
+  & h2 {
+    color: var(--color-blue-200);
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-medium);
+  }
+
+  & > section {
+    margin-bottom: var(--space-x-large);
+  }
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36ch, 1fr));
+  grid-gap: var(--space-xx-large);
+}
+
+.page-footer__disclaimer {
+  background: var(--color-blue-500);
+  color: var(--color-blue-200);
+  padding: var(--space-medium) 0;
+
+  & p {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 820px) {
+    & p {
+      display: "inline-block";
+    }
+
+    & p + p {
+      margin-left: var(--space-x-large);
+    }
+  }
 }
